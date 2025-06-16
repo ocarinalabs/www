@@ -21,7 +21,7 @@ const heming = localFont({
 
 export const metadata: Metadata = {
   title: "sidekick",
-  description: "your sidekick always",
+  description: "your everything sidekick",
 };
 
 export default function RootLayout({
