@@ -2,8 +2,13 @@ import { KnotAnimation } from "@/components/ui/ascii-knot";
 
 const CommunityPage = () => {
   return (
-    <div className="flex w-full h-screen justify-center items-center">
-      <KnotAnimation />
+    <div className="relative w-full h-screen">
+      <div className="absolute inset-0 flex justify-center items-center">
+        <KnotAnimation />
+      </div>
+      <h1 className="absolute bottom-10 w-full text-center font-heming font-light text-2xl">
+        coming soon
+      </h1>
     </div>
   );
 };
