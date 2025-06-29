@@ -13,4 +13,4 @@ const CommunityPage = () => {
   );
 };
 
-export default CommunityPage; 
+export default CommunityPage;

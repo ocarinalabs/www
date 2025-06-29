@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { Logo } from "./logo";
 
@@ -326,4 +326,4 @@ export function Footer() {
       </div>
     </footer>
   );
-} 
+}

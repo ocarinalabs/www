@@ -13,4 +13,4 @@ const LabsPage = () => {
   );
 };
 
-export default LabsPage; 
+export default LabsPage;

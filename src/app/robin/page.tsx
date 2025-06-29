@@ -10,7 +10,7 @@ const RobinPage = () => {
         coming soon @ robin.now
       </h1>
     </div>
-  )
+  );
 };
 
-export default RobinPage; 
+export default RobinPage;
