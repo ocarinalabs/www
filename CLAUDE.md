@@ -27,6 +27,7 @@ npm run lint
 ### Redirect System
 
 The site uses a redirect architecture where internal paths redirect to external domains:
+
 - `/robin` → `https://robin.now` (permanent redirect)
 - `/labs` → `https://labs.now` (permanent redirect)
 - `/founders` → `https://founders.now` (permanent redirect)
@@ -36,6 +37,7 @@ This allows internal links throughout the site while maintaining external produc
 ### Font System
 
 Uses a comprehensive typography system with 5 fonts:
+
 - **Geist Sans** (`font-sans`) - Default body text
 - **Geist Mono** (`font-mono`) - Code and monospace text
 - **Heming** (`font-heming`) - Legacy font (still loaded)
