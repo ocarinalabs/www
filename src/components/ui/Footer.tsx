@@ -71,256 +71,185 @@ const DiscordIcon = () => (
   </svg>
 );
 
-const CheckCircleIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="10"
-    height="10"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="lucide lucide-circle-check"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="10"></circle>
-    <path d="m9 12 2 2 4-4"></path>
-  </svg>
-);
+// const CheckCircleIcon = () => (
+//   <svg
+//     xmlns="http://www.w3.org/2000/svg"
+//     width="10"
+//     height="10"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     stroke="currentColor"
+//     strokeWidth="2"
+//     strokeLinecap="round"
+//     strokeLinejoin="round"
+//     className="lucide lucide-circle-check"
+//     aria-hidden="true"
+//   >
+//     <circle cx="12" cy="12" r="10"></circle>
+//     <path d="m9 12 2 2 4-4"></path>
+//   </svg>
+// );
 
-export function Footer() {
-  // const handleBackToTop = () => {
-  //   window.scrollTo({ top: 0, behavior: "smooth" });
-  // };
+interface MenuItem {
+  title: string;
+  links: {
+    text: string;
+    url: string;
+  }[];
+}
+
+interface SocialLink {
+  icon: React.ReactElement;
+  href: string;
+  label: string;
+}
+
+interface StatusItem {
+  icon: React.ReactElement;
+  text: string;
+  href?: string;
+}
+
+interface FooterProps {
+  logo?: {
+    component: React.ComponentType<{ className?: string }>;
+    title: string;
+    href: string;
+  };
+  menuItems?: MenuItem[];
+  socialLinks?: SocialLink[];
+  statusItems?: StatusItem[];
+  copyright?: string;
+}
+
+const defaultMenuItems: MenuItem[] = [
+  {
+    title: "Products",
+    links: [
+      { text: "Robin", url: "/robin" },
+      { text: "Labs", url: "/labs" },
+      { text: "Founders", url: "/founders" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { text: "Help Center", url: "https://docs.sidekick.now" },
+      { text: "Blog", url: "https://blog.sidekick.now" },
+      { text: "Manifesto", url: "/" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { text: "About", url: "https://docs.sidekick.now" },
+      { text: "Contact", url: "mailto:youneeda@sidekick.now" },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      {
+        text: "Terms of Service",
+        url: "https://docs.sidekick.now/policies/terms",
+      },
+      {
+        text: "Privacy Policy",
+        url: "https://docs.sidekick.now/policies/privacy",
+      },
+    ],
+  },
+];
+
+const defaultSocialLinks: SocialLink[] = [
+  { icon: <XIcon />, href: "https://x.com/sidekick", label: "X (Twitter)" },
+  { icon: <GithubIcon />, href: "https://github.com/sidekick", label: "GitHub" },
+  { icon: <DiscordIcon />, href: "https://discord.gg/sidekick", label: "Discord" },
+  { icon: <InstagramIcon />, href: "https://instagram.com/sidekick", label: "Instagram" },
+  { icon: <LinkedInIcon />, href: "https://linkedin.com/company/sidekick", label: "LinkedIn" },
+];
+
+const defaultStatusItems: StatusItem[] = [
+  // {
+  //   icon: <CheckCircleIcon />,
+  //   text: "Status: All Systems Operational",
+  //   href: "#",
+  // },
+];
+
+export function Footer({
+  logo = {
+    component: Logo,
+    title: "sidekick",
+    href: "/",
+  },
+  menuItems = defaultMenuItems,
+  socialLinks = defaultSocialLinks,
+  statusItems = defaultStatusItems,
+  copyright = `© ${new Date().getFullYear()} Sidekick, Now.`,
+}: FooterProps) {
+  const LogoComponent = logo.component;
 
   return (
     <footer className="w-full bg-black text-white flex flex-col items-center justify-center px-4 pt-8">
       <div className="w-full max-w-[1000px]">
-        <div className="grid grid-cols-1 items-end gap-8 font-mono text-sm lg:grid-cols-[1fr_3fr_346px] lg:gap-0">
-          <div className="flex flex-col justify-start space-y-4 lg:space-y-8 mt-4 mb-8">
-            <div className="size-16 flex items-center justify-center">
-              <Logo className="transition mt-1 size-16" />
-            </div>
-            {/* The download link for the logo is commented out as the asset doesn't exist yet */}
-            {/* <a className="text-zinc-400" download="sidekick-logo.svg" href="/assets/sidekick-logo.svg">
-              └ sidekick-logo.svg
-            </a> */}
-          </div>
-        </div>
         <div className="relative">
           <div className="grid grid-cols-2 gap-8 lg:gap-16 text-sm lg:grid-cols-4">
-            <ul className="space-y-3">
-              <li className="font-mono text-zinc-400 text-xs uppercase tracking-wider">
-                Solutions
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="/robin"
-                >
-                  Robin
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="/labs"
-                >
-                  Labs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="/founders"
-                >
-                  Founders
-                </a>
-              </li>
-            </ul>
-            <ul className="space-y-3">
-              <li className="font-mono text-zinc-400 text-xs uppercase tracking-wider">
-                Resources
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="#"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="#"
-                >
-                  Manifesto
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="#"
-                >
-                  Help Center
-                </a>
-              </li>
-            </ul>
-            <ul className="space-y-3">
-              <li className="font-mono text-zinc-400 text-xs uppercase tracking-wider">
-                Company
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="#"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="#"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="#"
-                >
-                  Contact
-                </a>
-              </li>
-            </ul>
-            <ul className="space-y-3">
-              <li className="font-mono text-zinc-400 text-xs uppercase tracking-wider">
-                Legal
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="/policies/terms-of-service"
-                >
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-zinc-300 hover:text-white transition-colors"
-                  href="/policies/privacy-policy"
-                >
-                  Privacy Policy
-                </a>
-              </li>
-            </ul>
+            {menuItems.map((section, sectionIdx) => (
+              <ul key={sectionIdx} className="space-y-3">
+                <li className="font-clash-display text-zinc-400 text-xs uppercase tracking-wider">
+                  {section.title}
+                </li>
+                {section.links.map((link, linkIdx) => (
+                  <li key={linkIdx}>
+                    <a
+                      className="font-sans text-zinc-300 hover:text-white transition-colors"
+                      href={link.url}
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ))}
           </div>
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:gap-0 border-t border-dashed border-zinc-700 mt-8 pt-8">
             <div className="flex flex-col space-y-4 text-xs lg:flex-row lg:items-center lg:space-x-8 lg:space-y-0">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center space-x-2 py-1 text-white hover:text-zinc-300 transition-colors cursor-pointer"
-                href="#"
-              >
-                <span className="text-green-500 group-hover:text-sky-300">
-                  <CheckCircleIcon />
-                </span>
-                <span>Status: All Systems Operational</span>
-              </a>
-              {/* <a
-                download="sidekick-brand.zip"
-                className="group flex items-center space-x-2 py-1 text-white hover:text-zinc-300 transition-colors cursor-pointer"
-                href="#"
-              >
-                <span className="text-green-500 group-hover:text-sky-300">
-                  ↓
-                </span>
-                <span>Download Sidekick brand (.zip)</span>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center space-x-2 py-1 text-white hover:text-zinc-300 transition-colors cursor-pointer"
-                href="#"
-              >
-                <span className="text-green-500 group-hover:text-sky-300">
-                  <DiscordIcon />
-                </span>
-                <span>Join our discord community</span>
-              </a> */}
-              {/* <button
-                type="button"
-                className="group flex items-center space-x-2 py-1 text-white hover:text-zinc-300 transition-colors cursor-pointer"
-                onClick={handleBackToTop}
-              >
-                <span className="text-green-500 group-hover:text-sky-300">
-                  ↑
-                </span>
-                <span>Back to top</span>
-              </button> */}
+              {statusItems.map((item, idx) => (
+                <a
+                  key={idx}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center space-x-2 py-1 text-white hover:text-zinc-300 transition-colors cursor-pointer"
+                  href={item.href || "#"}
+                >
+                  <span className="text-green-500 group-hover:text-sky-300">
+                    {item.icon}
+                  </span>
+                  <span className="font-sans">{item.text}</span>
+                </a>
+              ))}
+              <div className="flex items-center gap-x-2 text-zinc-400 text-[11px]">
+                <LogoComponent className="transition size-3" />
+                <span className="font-mono">{copyright}</span>
+              </div>
             </div>
             <div className="flex space-x-2 text-white">
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors"
-                href="#"
-              >
-                <div className="size-6 flex items-center justify-center">
-                  <XIcon />
-                </div>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors"
-                href="#"
-              >
-                <div className="size-6 flex items-center justify-center">
-                  <GithubIcon />
-                </div>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors"
-                href="#"
-              >
-                <div className="size-6 flex items-center justify-center">
-                  <DiscordIcon />
-                </div>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors"
-                href="#"
-              >
-                <div className="size-6 flex items-center justify-center">
-                  <InstagramIcon />
-                </div>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-zinc-300 transition-colors"
-                href="#"
-              >
-                <div className="size-6 flex items-center justify-center">
-                  <LinkedInIcon />
-                </div>
-              </a>
+              {socialLinks.map((social, idx) => (
+                <a
+                  key={idx}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-zinc-300 transition-colors"
+                  href={social.href}
+                  aria-label={social.label}
+                >
+                  <div className="size-6 flex items-center justify-center">
+                    {social.icon}
+                  </div>
+                </a>
+              ))}
             </div>
-          </div>
-          <div className="flex gap-x-1 space-y-1 pt-4 text-zinc-400 text-[11px]">
-            <Logo className="transition mt-1 size-2" />
-            Sidekick © {new Date().getFullYear()}. All Rights Reserved
           </div>
         </div>
       </div>

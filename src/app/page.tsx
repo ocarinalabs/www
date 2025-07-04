@@ -1,41 +1,33 @@
 "use client";
 
-import { EngravedString } from "@/components/ui/interactive-string";
-import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 import { Footer } from "@/components/ui/Footer";
+import { Header } from "@/components/ui/Header";
+import { Manifesto } from "@/components/ui/Manifesto";
 
 export default function Home() {
   return (
     <main className="relative flex flex-col min-h-screen bg-black text-gray-300">
-      <EngravedString text="sidekick" />
-      <div className="flex flex-col flex-grow items-center justify-center text-center">
-        <div className="flex flex-col items-center space-y-8">
-          <header className="flex flex-col items-center space-y-4">
-            <div className="flex items-center">
-              <Logo className="h-10 w-10" />
-              <h1 className="ml-3 text-5xl font-heming font-light">sidekick</h1>
-            </div>
-            <p className="text-xl font-heming font-light text-gray-400 max-w-md">
-              everyone needs a sidekick.now we&apos;re yours.
-            </p>
-          </header>
-          <nav className="flex space-x-6 text-lg font-light text-gray-400">
+      <Header />
+      <div className="flex flex-col pt-[100px]">
+        <Manifesto />
+        <div className="flex flex-col items-center">
+          <nav className="flex space-x-6 text-sm text-gray-400">
             <Link
               href="/robin"
-              className="font-heming hover:text-white text-zinc-500 transition-colors underline"
+              className="font-mono hover:text-white text-zinc-500 transition-colors underline"
             >
               robin
             </Link>
             <Link
               href="/labs"
-              className="font-heming hover:text-white text-orange-500 transition-colors underline"
+              className="font-mono hover:text-white text-orange-500 transition-colors underline"
             >
               labs
             </Link>
             <Link
               href="/founders"
-              className="font-heming hover:text-white text-green-500 transition-colors underline"
+              className="font-mono hover:text-white text-green-500 transition-colors underline"
             >
               founders
             </Link>
