@@ -42,14 +42,17 @@ const gambetta = localFont({
 
 export const metadata: Metadata = {
   title: "Sidekick - Everyone needs a sidekick",
-  description: "Sidekick builds AI-powered technology that acts like your personal sidekick. Starting with Robin, our intelligent business management platform that turns any smartphone into a complete POS system.",
-  keywords: "sidekick, AI assistant, business management, POS system, Robin, fintech, AI-powered tools",
+  description:
+    "Sidekick builds AI-powered technology that acts like your personal sidekick. Starting with Robin, our intelligent business management platform that turns any smartphone into a complete POS system.",
+  keywords:
+    "sidekick, AI assistant, business management, POS system, Robin, fintech, AI-powered tools",
   authors: [{ name: "Sidekick, Now." }],
   creator: "Sidekick",
   publisher: "Sidekick",
   openGraph: {
     title: "Sidekick - Everyone needs a sidekick",
-    description: "AI-powered technology that acts like your personal sidekick. Smart, specialized, and always on your side.",
+    description:
+      "AI-powered technology that acts like your personal sidekick. Smart, specialized, and always on your side.",
     url: "https://sidekick.now",
     siteName: "Sidekick",
     locale: "en_US",
@@ -58,7 +61,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Sidekick - Everyone needs a sidekick",
-    description: "AI-powered technology that acts like your personal sidekick. Smart, specialized, and always on your side.",
+    description:
+      "AI-powered technology that acts like your personal sidekick. Smart, specialized, and always on your side.",
     creator: "@sidekick",
   },
   robots: {

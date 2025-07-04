@@ -163,10 +163,26 @@ const defaultMenuItems: MenuItem[] = [
 
 const defaultSocialLinks: SocialLink[] = [
   { icon: <XIcon />, href: "https://x.com/sidekick", label: "X (Twitter)" },
-  { icon: <GithubIcon />, href: "https://github.com/sidekick", label: "GitHub" },
-  { icon: <DiscordIcon />, href: "https://discord.gg/sidekick", label: "Discord" },
-  { icon: <InstagramIcon />, href: "https://instagram.com/sidekick", label: "Instagram" },
-  { icon: <LinkedInIcon />, href: "https://linkedin.com/company/sidekick", label: "LinkedIn" },
+  {
+    icon: <GithubIcon />,
+    href: "https://github.com/sidekick",
+    label: "GitHub",
+  },
+  {
+    icon: <DiscordIcon />,
+    href: "https://discord.gg/sidekick",
+    label: "Discord",
+  },
+  {
+    icon: <InstagramIcon />,
+    href: "https://instagram.com/sidekick",
+    label: "Instagram",
+  },
+  {
+    icon: <LinkedInIcon />,
+    href: "https://linkedin.com/company/sidekick",
+    label: "LinkedIn",
+  },
 ];
 
 const defaultStatusItems: StatusItem[] = [

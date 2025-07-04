@@ -1,5 +1,5 @@
-import { permanentRedirect } from 'next/navigation'
+import { permanentRedirect } from "next/navigation";
 
 export default function LabsPage() {
-  permanentRedirect('https://labs.now')
+  permanentRedirect("https://labs.now");
 }
