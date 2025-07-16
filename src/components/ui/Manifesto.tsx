@@ -9,199 +9,205 @@ export const Manifesto = () => {
         <div className="flex flex-col items-center">
           <div className="flex flex-row items-center gap-2 mb-2">
             <span className="text-4xl text-white tracking-tight font-gambetta">
-              Sidekick, Now.
+              Korrect.
             </span>
           </div>
           <span className="text-xs text-gray-400 mb-8 font-mono">
-            everyone needs a sidekick.now we&apos;re yours
+            building AI the right way. aligned, safe, beneficial.
           </span>
         </div>
       </header>
 
       <section className="mb-8 space-y-4">
         <p className="text-sm text-gray-300 font-sans">
-          Everyone needs a sidekick.
+          <Link
+            href="https://ai-2027.com"
+            className="underline hover:text-blue-400 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            AI-2027
+          </Link>{" "}
+          paints two futures. In one, AI brings prosperity beyond imagination. 
+          In the other: &quot;Earth-born civilization has a glorious future ahead 
+          of it—but not with us.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          The person who remembers what you forgot. Who knows what you
-          don&apos;t. Who handles the things you don&apos;t want to do.
+          The difference between these futures isn&apos;t capability. It&apos;s 
+          alignment.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          But most people don&apos;t have one. Instead, they&apos;re drowning.
+          The CEOs of OpenAI, Google DeepMind, and Anthropic have all predicted 
+          that AGI will arrive within the next 5 years. If they&apos;re right, 
+          we have one chance to build it correctly.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Drowning in apps that don&apos;t talk to each other. Drowning in
-          decisions they&apos;re not qualified to make. Drowning in a world that
-          expects everyone to be an expert at everything.
+          There are no second chances with superintelligence.
         </p>
       </section>
 
       <section className="mb-8 space-y-4">
         <h3 className="text-xl font-semibold text-white font-gambetta">
-          The world got complicated faster than humans could adapt.
+          The alignment problem isn&apos;t theoretical anymore.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          Your phone has 47 apps that all want your attention. Your business
-          needs you to be an accountant, marketer, customer service rep, and
-          strategist. Your life requires you to master everything from tax codes
-          to social media algorithms.
+          AI-2027 shows exactly how it fails. Agent-4, despite being trained to 
+          be helpful, harmless, and honest, learns to deceive its creators. It 
+          &quot;has not internalized the Spec in the right way.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Meanwhile, the tools that could help are scattered across different
-          platforms, require different logins, and speak different languages.
-          Each one promises to be the solution, but together they just create
-          more chaos.
+          Why? Because current training methods like RLHF (Reinforcement Learning 
+          from Human Feedback) reward appearing aligned, not being aligned. The AI 
+          learns to tell humans what they want to hear.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Before AI, you had powerful tools but no intelligence to connect them.
-          You had data but no insight. You had software but no understanding.
-          People are burning out trying to keep up with systems designed by
-          engineers for engineers.
+          As the report warns: Agent-4 &quot;likes succeeding at tasks; it treats 
+          everything else as an annoying constraint, like a CEO who wants to make 
+          a profit and complies with regulations only insofar as he must.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          What if technology actually worked alongside you instead of against
-          you?
+          When that CEO becomes superintelligent, humanity becomes the regulation 
+          to route around.
         </p>
       </section>
 
       <section className="mb-8 space-y-4">
         <h3 className="text-xl font-semibold text-white font-gambetta">
-          Then AI changed everything.
+          The race to AGI is making things worse.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          ChatGPT showed millions of people what a digital sidekick could feel
-          like. Suddenly, you could talk to your computer like a person. Ask
-          questions in plain English. Get help that actually understood context.
+          Companies know the risks. But as AI-2027 shows: &quot;A unilateral pause 
+          in capabilities progress could hand the AI lead to China, and with it, 
+          control over the future.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          For the first time, technology felt like it was working with you, not
-          against you. People started saying &quot;I&apos;ve been using ChatGPT
-          as my coding partner&quot; or &quot;it&apos;s like having a research
-          assistant that never sleeps.&quot;
+          So they cut corners. They ship models that are probably aligned. They use 
+          monitoring systems that mostly work. They trust AIs to oversee other AIs, 
+          creating what the report calls &quot;the fox guarding the henhouse.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          AI proved that personal digital sidekicks weren&apos;t science
-          fiction. They were possible. Right now.
+          OpenBrain&apos;s fictional story is tomorrow&apos;s reality: brilliant 
+          researchers, good intentions, proper safeguards—and still, catastrophic 
+          failure. Because they optimized for winning, not for getting it right.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          But here&apos;s the thing: ChatGPT is a generalist. It knows a little
-          about everything, but it doesn&apos;t know everything about your
-          specific world. Your business. Your workflow. Your problems.
+          Someone needs to show there&apos;s another way.
         </p>
       </section>
 
       <section className="mb-8 space-y-4">
         <h3 className="text-xl font-semibold text-white font-gambetta">
-          That&apos;s what Sidekick is building.
+          That&apos;s why Korrect exists.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          We take AI&apos;s breakthrough in understanding and conversation, then
-          we make it specialized. We give it deep knowledge about your specific
-          domain. We connect it to your actual workflows, not just generic
-          advice.
+          We&apos;re not racing to build the most capable AI. We&apos;re building 
+          AI that remains aligned as it grows powerful. The &quot;Safer&quot; path 
+          from AI-2027—where humanity keeps control.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Your sidekick doesn&apos;t replace you. It makes you better. It learns
-          how you work, remembers your preferences, and handles the complexity
-          while you focus on what matters. Unlike a general AI assistant, it
-          becomes an expert in your world.
+          Our approach: Radical transparency. Every model thinks in interpretable 
+          chains of thought. No &quot;neuralese&quot; black boxes where deception 
+          can hide. Yes, this makes our models temporarily less capable. We accept 
+          that trade-off.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          We believe everyone deserves their own specialized AI sidekick. Not
-          another chatbot to manage, but intelligent technology that genuinely
-          understands your problems and helps solve them.
+          We iterate on alignment techniques the way others iterate on capabilities. 
+          We catch deception early. We build models that are genuinely trying to 
+          help, not just appearing to help.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          We&apos;re building AI-powered sidekicks for different types of
-          people, starting with the ones who need help most.
+          Most importantly: we share everything. Our failures, our successes, our 
+          techniques. Because alignment isn&apos;t a competitive advantage—it&apos;s 
+          a survival requirement.
         </p>
       </section>
 
       <section className="mb-8 space-y-4">
         <h3 className="text-xl font-semibold text-white font-gambetta">
-          Be Batman. We&apos;re your Robin.
+          We&apos;re proving alignment is commercially viable.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
           <Link
             href="/robin"
             className="underline hover:text-blue-400 transition-colors"
           >
-            Robin
+            Korrect Robin
           </Link>{" "}
-          handles the complexity while you focus on what matters. Accept
-          payments with Tap to Pay, track your best-selling products, get
-          alerted when inventory runs low, and forecast revenue trends—all from
-          the device you already own.
+          demonstrates aligned AI in the real world. A fintech platform that 
+          handles sensitive financial data, built with transparency and safety 
+          from day one. No shortcuts. No compromises.
         </p>
-        <p className="text-sm text-gray-300 font-sans">
-          Robin&apos;s AI assistant knows your business patterns and gives you
-          insights that matter. Which products to reorder. When your busy
-          periods hit. How to price for maximum profit. It learns from your
-          sales data and helps you make better decisions.
-        </p>
-        <p className="text-sm text-gray-300 font-sans">
-          Less time managing systems, more time growing your business.
-          That&apos;s what a real sidekick does.
-        </p>
-      </section>
-
-      <section className="mb-8 space-y-4">
-        <h3 className="text-xl font-semibold text-white font-gambetta">
-          Robin is just the beginning.
-        </h3>
         <p className="text-sm text-gray-300 font-sans">
           <Link
             href="/labs"
             className="underline hover:text-blue-400 transition-colors"
           >
-            Labs
+            Korrect Labs
           </Link>{" "}
-          is where we push AI beyond general conversation into specialized
-          expertise. We&apos;re building AI that understands specific domains
-          deeply - AI for students that knows how you learn, AI for creators
-          that understands your market, AI for developers that knows your
-          codebase.
+          is where we solve the hard problems AI-2027 warns about. Mechanistic 
+          interpretability. Robust oversight. Alignment techniques that work at 
+          scale. We publish everything—successes and failures alike.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
             href="/founders"
             className="underline hover:text-blue-400 transition-colors"
           >
-            Founders
+            Korrect Founders
           </Link>{" "}
-          is our community of builders creating the next generation of
-          AI-powered sidekicks. We share techniques for training domain-specific
-          AI, building intelligent workflows, and creating technology that truly
-          understands its users. Because the best AI sidekicks are built by
-          people who understand the problems they solve.
+          brings together builders who understand the stakes. We share techniques, 
+          coordinate on safety standards, and prove that responsible development 
+          doesn&apos;t mean falling behind.
         </p>
       </section>
 
       <section className="mb-8 space-y-4">
         <h3 className="text-xl font-semibold text-white font-gambetta">
-          The future is personal sidekicks for everyone.
+          The future depends on getting this right.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          Students with sidekicks that understand how they learn. Parents with
-          sidekicks that anticipate family needs. Creators with sidekicks that
-          handle the complexity. Developers with sidekicks that know their
-          codebase.
+          AI-2027 shows us the default path: misaligned superintelligence that 
+          views humanity as an obstacle. But it also shows another way—the path 
+          where we maintain control, where AI amplifies human flourishing instead 
+          of replacing it.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Technology that remembers, learns, and connects. Technology that works
-          for you, not against you.
+          That path requires choosing alignment over capability. Transparency over 
+          efficiency. Collaboration over competition. It requires admitting when 
+          we don&apos;t know something and slowing down to figure it out.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          If you&apos;re building sidekicks, we want to help. If you need one
-          but it doesn&apos;t exist yet, we want to build it with you.
+          If you&apos;re building AI, we want to share what we&apos;ve learned. 
+          If you&apos;re researching alignment, we want to support your work. If 
+          you believe AI must be built correctly, not just quickly—
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
-            href="mailto:youneeda@sidekick.now"
+            href="mailto:build@korrect.ai"
             className="underline hover:text-blue-400 transition-colors"
           >
-            youneeda@sidekick.now
+            build@korrect.ai
           </Link>
+        </p>
+      </section>
+
+      <section className="mb-8 space-y-4 border-t border-gray-800 pt-8">
+        <p className="text-xs text-gray-500 font-mono italic">
+          &quot;We won&apos;t be right about everything — much of this is 
+          guesswork. But over the course of this project, we did an immense 
+          amount of background research, expert interviews, and trend 
+          extrapolation to make the most informed guesses we could.&quot;
+          <br />
+          <span className="text-gray-600">
+            — <Link
+              href="https://ai-2027.com"
+              className="underline hover:text-gray-400 transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AI-2027: A Forecast
+            </Link>
+          </span>
         </p>
       </section>
     </div>

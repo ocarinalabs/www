@@ -3,25 +3,25 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://sidekick.now",
+      url: "https://korrect.ai",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
-      url: "https://sidekick.now/robin",
+      url: "https://korrect.ai/robin",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://sidekick.now/labs",
+      url: "https://korrect.ai/labs",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://sidekick.now/founders",
+      url: "https://korrect.ai/founders",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,

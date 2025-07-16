@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sidekick.now/sitemap.xml
+Sitemap: https://korrect.ai/sitemap.xml

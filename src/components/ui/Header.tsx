@@ -14,7 +14,7 @@ export const Header = () => {
           >
             <Logo className="h-8 w-8" />
             <span className="font-clash-display text-white text-xl font-medium">
-              sidekick
+              korrect
             </span>
           </Link>
         </div>

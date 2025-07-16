@@ -134,16 +134,16 @@ const defaultMenuItems: MenuItem[] = [
   {
     title: "Resources",
     links: [
-      { text: "Help Center", url: "https://docs.sidekick.now" },
-      { text: "Blog", url: "https://blog.sidekick.now" },
+      { text: "Help Center", url: "https://docs.korrect.ai" },
+      { text: "Blog", url: "https://blog.korrect.ai" },
       { text: "Manifesto", url: "/" },
     ],
   },
   {
     title: "Company",
     links: [
-      { text: "About", url: "https://docs.sidekick.now" },
-      { text: "Contact", url: "mailto:youneeda@sidekick.now" },
+      { text: "About", url: "https://docs.korrect.ai" },
+      { text: "Contact", url: "mailto:build@korrect.ai" },
     ],
   },
   {
@@ -151,36 +151,36 @@ const defaultMenuItems: MenuItem[] = [
     links: [
       {
         text: "Terms of Service",
-        url: "https://docs.sidekick.now/policies/terms",
+        url: "https://docs.korrect.ai/policies/terms",
       },
       {
         text: "Privacy Policy",
-        url: "https://docs.sidekick.now/policies/privacy",
+        url: "https://docs.korrect.ai/policies/privacy",
       },
     ],
   },
 ];
 
 const defaultSocialLinks: SocialLink[] = [
-  { icon: <XIcon />, href: "https://x.com/sidekick", label: "X (Twitter)" },
+  { icon: <XIcon />, href: "https://x.com/korrect", label: "X (Twitter)" },
   {
     icon: <GithubIcon />,
-    href: "https://github.com/sidekick",
+    href: "https://github.com/korrect",
     label: "GitHub",
   },
   {
     icon: <DiscordIcon />,
-    href: "https://discord.gg/sidekick",
+    href: "https://discord.gg/korrect",
     label: "Discord",
   },
   {
     icon: <InstagramIcon />,
-    href: "https://instagram.com/sidekick",
+    href: "https://instagram.com/korrect",
     label: "Instagram",
   },
   {
     icon: <LinkedInIcon />,
-    href: "https://linkedin.com/company/sidekick",
+    href: "https://linkedin.com/company/korrect",
     label: "LinkedIn",
   },
 ];
@@ -196,13 +196,13 @@ const defaultStatusItems: StatusItem[] = [
 export function Footer({
   logo = {
     component: Logo,
-    title: "sidekick",
+    title: "korrect",
     href: "/",
   },
   menuItems = defaultMenuItems,
   socialLinks = defaultSocialLinks,
   statusItems = defaultStatusItems,
-  copyright = `© ${new Date().getFullYear()} Sidekick, Now.`,
+  copyright = `© ${new Date().getFullYear()} Korrect, Inc.`,
 }: FooterProps) {
   const LogoComponent = logo.component;
 

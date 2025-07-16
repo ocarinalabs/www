@@ -41,29 +41,29 @@ const gambetta = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sidekick - Everyone needs a sidekick",
+  title: "Korrect - Building AI the right way",
   description:
-    "Sidekick builds AI-powered technology that acts like your personal sidekick. Starting with Robin, our intelligent business management platform that turns any smartphone into a complete POS system.",
+    "Korrect builds aligned AI systems that remain safe as they grow powerful. We prioritize alignment over capability, transparency over efficiency, and humanity's future over the AI race.",
   keywords:
-    "sidekick, AI assistant, business management, POS system, Robin, fintech, AI-powered tools",
-  authors: [{ name: "Sidekick, Now." }],
-  creator: "Sidekick",
-  publisher: "Sidekick",
+    "AI alignment, AI safety, responsible AI, RLHF, mechanistic interpretability, aligned AI, Korrect, AI research, superintelligence alignment",
+  authors: [{ name: "Korrect" }],
+  creator: "Korrect",
+  publisher: "Korrect",
   openGraph: {
-    title: "Sidekick - Everyone needs a sidekick",
+    title: "Korrect - Building AI the right way",
     description:
-      "AI-powered technology that acts like your personal sidekick. Smart, specialized, and always on your side.",
-    url: "https://sidekick.now",
-    siteName: "Sidekick",
+      "Aligned AI systems that remain safe as they grow powerful. Because there are no second chances with superintelligence.",
+    url: "https://korrect.ai",
+    siteName: "Korrect",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sidekick - Everyone needs a sidekick",
+    title: "Korrect - Building AI the right way",
     description:
-      "AI-powered technology that acts like your personal sidekick. Smart, specialized, and always on your side.",
-    creator: "@sidekick",
+      "Aligned AI systems that remain safe as they grow powerful. Because there are no second chances with superintelligence.",
+    creator: "@korrect",
   },
   robots: {
     index: true,

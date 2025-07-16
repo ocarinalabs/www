@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Next.js 15 website for Sidekick, built with TypeScript, React 19, and Tailwind CSS v4. The site serves as a landing page for Sidekick's AI-powered sidekick products (Robin, Labs, Founders) with a focus on manifesto-style content.
+This is a Next.js 15 website for Korrect, built with TypeScript, React 19, and Tailwind CSS v4. The site serves as a landing page for Korrect's AI alignment and safety research organization, with products including Korrect Robin (aligned fintech AI), Korrect Labs (alignment research), and Korrect Founders (community of responsible AI builders). The site features a manifesto-style content approach emphasizing the critical importance of AI alignment.
 
 ## Development Commands
 
