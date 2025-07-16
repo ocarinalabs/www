@@ -202,7 +202,7 @@ export function Footer({
   menuItems = defaultMenuItems,
   socialLinks = defaultSocialLinks,
   statusItems = defaultStatusItems,
-  copyright = `© ${new Date().getFullYear()} Korrect, Inc.`,
+  copyright = `© ${new Date().getFullYear()} Korrect`,
 }: FooterProps) {
   const LogoComponent = logo.component;
 
@@ -245,9 +245,8 @@ export function Footer({
                   <span className="font-sans">{item.text}</span>
                 </a>
               ))}
-              <div className="flex items-center gap-x-2 text-zinc-400 text-[11px]">
-                <LogoComponent className="transition size-3" />
-                <span className="font-mono">{copyright}</span>
+              <div className="text-zinc-400 text-[11px] font-mono">
+                <LogoComponent className="inline text-[11px] relative -top-[1px]" /> {copyright}
               </div>
             </div>
             <div className="flex space-x-2 text-white">

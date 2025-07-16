@@ -41,7 +41,7 @@ const gambetta = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Korrect - Building AI the right way",
+  title: "Korrect",
   description:
     "Korrect builds aligned AI systems that remain safe as they grow powerful. We prioritize alignment over capability, transparency over efficiency, and humanity's future over the AI race.",
   keywords:
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Korrect - Building AI the right way",
+    title: "Korrect",
     description:
       "Aligned AI systems that remain safe as they grow powerful. Because there are no second chances with superintelligence.",
     creator: "@korrect",

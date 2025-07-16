@@ -10,12 +10,9 @@ export const Header = () => {
         <div className="flex items-center gap-2">
           <Link
             href="/"
-            className="text-base hover:text-gray-300 transition-colors flex items-center gap-2 z-20"
+            className="text-base hover:text-gray-300 transition-colors z-20 font-clash-display text-white text-xl font-medium"
           >
-            <Logo className="h-8 w-8" />
-            <span className="font-clash-display text-white text-xl font-medium">
-              korrect
-            </span>
+            <Logo className="inline text-2xl" />&nbsp;&nbsp;Korrect
           </Link>
         </div>
       </div>

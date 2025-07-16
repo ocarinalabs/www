@@ -30,7 +30,7 @@ export const Manifesto = () => {
           </Link>{" "}
           paints two futures. In one, AI brings prosperity beyond imagination. 
           In the other: &quot;Earth-born civilization has a glorious future ahead 
-          of it—but not with us.&quot;
+          of it - but not with us.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
           The difference between these futures isn&apos;t capability. It&apos;s 
@@ -87,7 +87,7 @@ export const Manifesto = () => {
         </p>
         <p className="text-sm text-gray-300 font-sans">
           OpenBrain&apos;s fictional story is tomorrow&apos;s reality: brilliant 
-          researchers, good intentions, proper safeguards—and still, catastrophic 
+          researchers, good intentions, proper safeguards - and still, catastrophic 
           failure. Because they optimized for winning, not for getting it right.
         </p>
         <p className="text-sm text-gray-300 font-sans">
@@ -102,7 +102,7 @@ export const Manifesto = () => {
         <p className="text-sm text-gray-300 font-sans">
           We&apos;re not racing to build the most capable AI. We&apos;re building 
           AI that remains aligned as it grows powerful. The &quot;Safer&quot; path 
-          from AI-2027—where humanity keeps control.
+          from AI-2027 - where humanity keeps control.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           Our approach: Radical transparency. Every model thinks in interpretable 
@@ -117,7 +117,7 @@ export const Manifesto = () => {
         </p>
         <p className="text-sm text-gray-300 font-sans">
           Most importantly: we share everything. Our failures, our successes, our 
-          techniques. Because alignment isn&apos;t a competitive advantage—it&apos;s 
+          techniques. Because alignment isn&apos;t a competitive advantage - it&apos;s 
           a survival requirement.
         </p>
       </section>
@@ -146,7 +146,7 @@ export const Manifesto = () => {
           </Link>{" "}
           is where we solve the hard problems AI-2027 warns about. Mechanistic 
           interpretability. Robust oversight. Alignment techniques that work at 
-          scale. We publish everything—successes and failures alike.
+          scale. We publish everything - successes and failures alike.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
@@ -167,7 +167,7 @@ export const Manifesto = () => {
         </h3>
         <p className="text-sm text-gray-300 font-sans">
           AI-2027 shows us the default path: misaligned superintelligence that 
-          views humanity as an obstacle. But it also shows another way—the path 
+          views humanity as an obstacle. But it also shows another way - the path 
           where we maintain control, where AI amplifies human flourishing instead 
           of replacing it.
         </p>
@@ -179,7 +179,7 @@ export const Manifesto = () => {
         <p className="text-sm text-gray-300 font-sans">
           If you&apos;re building AI, we want to share what we&apos;ve learned. 
           If you&apos;re researching alignment, we want to support your work. If 
-          you believe AI must be built correctly, not just quickly—
+          you believe AI must be built correctly, not just quickly - reach out.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
@@ -193,13 +193,13 @@ export const Manifesto = () => {
 
       <section className="mb-8 space-y-4 border-t border-gray-800 pt-8">
         <p className="text-xs text-gray-500 font-mono italic">
-          &quot;We won&apos;t be right about everything — much of this is 
+          &quot;We won&apos;t be right about everything - much of this is 
           guesswork. But over the course of this project, we did an immense 
           amount of background research, expert interviews, and trend 
           extrapolation to make the most informed guesses we could.&quot;
           <br />
           <span className="text-gray-600">
-            — <Link
+            - <Link
               href="https://ai-2027.com"
               className="underline hover:text-gray-400 transition-colors"
               target="_blank"
