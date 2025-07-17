@@ -12,7 +12,8 @@ export const Header = () => {
             href="/"
             className="text-base hover:text-gray-300 transition-colors z-20 font-clash-display text-white text-xl font-medium"
           >
-            <Logo className="inline text-2xl" />&nbsp;&nbsp;Korrect
+            <Logo className="inline text-2xl" />
+            &nbsp;&nbsp;Korrect
           </Link>
         </div>
       </div>

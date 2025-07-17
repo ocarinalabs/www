@@ -246,7 +246,8 @@ export function Footer({
                 </a>
               ))}
               <div className="text-zinc-400 text-[11px] font-mono">
-                <LogoComponent className="inline text-[11px] relative -top-[1px]" /> {copyright}
+                <LogoComponent className="inline text-[11px] relative -top-[1px]" />{" "}
+                {copyright}
               </div>
             </div>
             <div className="flex space-x-2 text-white">
