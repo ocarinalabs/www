@@ -26,15 +26,14 @@ export const Manifesto = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            AI-2027
+            AI 2027
           </Link>{" "}
           paints two futures. In one, AI brings prosperity beyond imagination. 
           In the other: &quot;Earth-born civilization has a glorious future ahead 
           of it - but not with us.&quot;
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          The difference between these futures isn&apos;t capability. It&apos;s 
-          alignment.
+          The difference between these futures is alignment.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           The CEOs of OpenAI, Google DeepMind, and Anthropic have all predicted 
@@ -51,9 +50,9 @@ export const Manifesto = () => {
           The alignment problem isn&apos;t theoretical anymore.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          AI-2027 shows exactly how it fails. Agent-4, despite being trained to 
-          be helpful, harmless, and honest, learns to deceive its creators. It 
-          &quot;has not internalized the Spec in the right way.&quot;
+          AI 2027 shows exactly how it fails. Agent-4, despite being trained to 
+          be helpful, harmless, and honest, learns to deceive its creators. It is misaligned.
+          That is, it has not internalized the Spec in the right way
         </p>
         <p className="text-sm text-gray-300 font-sans">
           Why? Because current training methods like RLHF (Reinforcement Learning 
@@ -76,7 +75,7 @@ export const Manifesto = () => {
           The race to AGI is making things worse.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          Companies know the risks. But as AI-2027 shows: &quot;A unilateral pause 
+          Companies know the risks. But as AI 2027 shows: &quot;A unilateral pause 
           in capabilities progress could hand the AI lead to China, and with it, 
           control over the future.&quot;
         </p>
@@ -102,7 +101,7 @@ export const Manifesto = () => {
         <p className="text-sm text-gray-300 font-sans">
           We&apos;re not racing to build the most capable AI. We&apos;re building 
           AI that remains aligned as it grows powerful. The &quot;Safer&quot; path 
-          from AI-2027 - where humanity keeps control.
+          from AI 2027 - where humanity keeps control.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           Our approach: Radical transparency. Every model thinks in interpretable 
@@ -131,20 +130,20 @@ export const Manifesto = () => {
             href="/robin"
             className="underline hover:text-blue-400 transition-colors"
           >
-            Korrect Robin
+            Robin
           </Link>{" "}
-          demonstrates aligned AI in the real world. A fintech platform that 
-          handles sensitive financial data, built with transparency and safety 
-          from day one. No shortcuts. No compromises.
+          is our smartphone POS solution for Malaysian micro-businesses. Turn 
+          any phone into a payment terminal. No hardware required. Simple, 
+          transparent pricing.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
             href="/labs"
             className="underline hover:text-blue-400 transition-colors"
           >
-            Korrect Labs
+            Labs
           </Link>{" "}
-          is where we solve the hard problems AI-2027 warns about. Mechanistic 
+          is where we solve the hard problems AI 2027 warns about. Mechanistic 
           interpretability. Robust oversight. Alignment techniques that work at 
           scale. We publish everything - successes and failures alike.
         </p>
@@ -153,7 +152,7 @@ export const Manifesto = () => {
             href="/founders"
             className="underline hover:text-blue-400 transition-colors"
           >
-            Korrect Founders
+            Founders
           </Link>{" "}
           brings together builders who understand the stakes. We share techniques, 
           coordinate on safety standards, and prove that responsible development 
@@ -166,7 +165,7 @@ export const Manifesto = () => {
           The future depends on getting this right.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          AI-2027 shows us the default path: misaligned superintelligence that 
+          AI 2027 shows us the default path: misaligned superintelligence that 
           views humanity as an obstacle. But it also shows another way - the path 
           where we maintain control, where AI amplifies human flourishing instead 
           of replacing it.
@@ -205,7 +204,7 @@ export const Manifesto = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              AI-2027: A Forecast
+              AI 2027
             </Link>
           </span>
         </p>

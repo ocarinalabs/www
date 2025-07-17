@@ -11,28 +11,6 @@ export default function Home() {
       <Header />
       <div className="flex flex-col pt-[100px]">
         <Manifesto />
-        <div className="flex flex-col items-center">
-          <nav className="flex space-x-6 text-sm text-gray-400">
-            <Link
-              href="/robin"
-              className="font-mono hover:text-white text-zinc-500 transition-colors underline"
-            >
-              robin
-            </Link>
-            <Link
-              href="/labs"
-              className="font-mono hover:text-white text-orange-500 transition-colors underline"
-            >
-              labs
-            </Link>
-            <Link
-              href="/founders"
-              className="font-mono hover:text-white text-green-500 transition-colors underline"
-            >
-              founders
-            </Link>
-          </nav>
-        </div>
       </div>
       <Footer />
       <div className="h-8"></div>
