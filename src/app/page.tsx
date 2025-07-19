@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 import { Manifesto } from "@/components/ui/Manifesto";
@@ -13,7 +12,6 @@ export default function Home() {
         <Manifesto />
       </div>
       <Footer />
-      <div className="h-8"></div>
     </main>
   );
 }

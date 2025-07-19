@@ -124,63 +124,58 @@ interface FooterProps {
 
 const defaultMenuItems: MenuItem[] = [
   {
-    title: "Products",
+    title: "Labs",
     links: [
-      { text: "Robin", url: "/robin" },
-      { text: "Labs", url: "/labs" },
-      { text: "Founders", url: "/founders" },
+      { text: "Experiments", url: "/labs" },
+      { text: "Challenges", url: "/challenges" },
+      { text: "Resources", url: "/resources" },
     ],
   },
   {
-    title: "Resources",
+    title: "Founders",
     links: [
-      { text: "Help Center", url: "https://docs.korrect.ai" },
-      { text: "Blog", url: "https://blog.korrect.ai" },
-      { text: "Manifesto", url: "/" },
+      { text: "Culture", url: "/founders" },
+      { text: "Events", url: "/events" },
+      { text: "Join", url: "/join" },
     ],
   },
   {
-    title: "Company",
+    title: "Robin",
     links: [
-      { text: "About", url: "https://docs.korrect.ai" },
+      { text: "Product", url: "/robin" },
+      { text: "Docs", url: "https://docs.robin.now" },
+    ],
+  },
+  {
+    title: "About",
+    links: [
+      { text: "Mission", url: "/" },
+      { text: "Team", url: "/team" },
       { text: "Contact", url: "mailto:build@korrect.ai" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      {
-        text: "Terms of Service",
-        url: "https://docs.korrect.ai/policies/terms",
-      },
-      {
-        text: "Privacy Policy",
-        url: "https://docs.korrect.ai/policies/privacy",
-      },
     ],
   },
 ];
 
 const defaultSocialLinks: SocialLink[] = [
-  { icon: <XIcon />, href: "https://x.com/korrect", label: "X (Twitter)" },
+  { icon: <XIcon />, href: "https://x.com/korrectai", label: "X (Twitter)" },
   {
     icon: <GithubIcon />,
-    href: "https://github.com/korrect",
+    href: "https://github.com/korrect-ai",
     label: "GitHub",
   },
   {
     icon: <DiscordIcon />,
-    href: "https://discord.gg/korrect",
+    href: "https://discord.gg/MmXnQpCAGa",
     label: "Discord",
   },
   {
     icon: <InstagramIcon />,
-    href: "https://instagram.com/korrect",
+    href: "https://www.instagram.com/korrect.ai/",
     label: "Instagram",
   },
   {
     icon: <LinkedInIcon />,
-    href: "https://linkedin.com/company/korrect",
+    href: "https://www.linkedin.com/company/korrect-ai/",
     label: "LinkedIn",
   },
 ];
@@ -207,7 +202,7 @@ export function Footer({
   const LogoComponent = logo.component;
 
   return (
-    <footer className="w-full bg-black text-white flex flex-col items-center justify-center px-4 pt-8">
+    <footer className="w-full bg-black text-white flex flex-col items-center justify-center px-4 pt-8 pb-8">
       <div className="w-full max-w-[1000px]">
         <div className="relative">
           <div className="grid grid-cols-2 gap-8 lg:gap-16 text-sm lg:grid-cols-4">
