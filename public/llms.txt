@@ -1,0 +1,32 @@
+# Korrect
+
+Building AI that helps humanity flourish, not merely survive.
+
+## Overview
+
+Korrect is an AI alignment and safety research organization developing aligned AI systems that enhance human potential. We create AI that works with humanity, not despite it.
+
+## Key Products
+
+- **Robin**: Aligned fintech AI that turns your phone into a business sidekick
+- **Labs**: Research division advancing AI alignment and safety
+- **Founders**: Community of responsible AI builders
+
+## Why Korrect
+
+- Safety-first approach to AI development
+- Building systems that empower humans
+- Focused on alignment from the ground up
+- Creating AI that enhances rather than replaces human capabilities
+
+## Our Mission
+
+In an age where many race to build powerful AI without pause, we choose a different path. We believe AI should be a tool that amplifies human potential, not a replacement for human judgment and values.
+
+## Contact
+
+Visit us at https://korrect.ai
+
+## Built With
+
+Cutting-edge AI alignment research and responsible development practices.

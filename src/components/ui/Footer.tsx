@@ -127,16 +127,15 @@ const defaultMenuItems: MenuItem[] = [
     title: "Labs",
     links: [
       { text: "Experiments", url: "/labs" },
-      { text: "Challenges", url: "/challenges" },
+      { text: "AI Safety Malaysia", url: "https://aisafety.my" },
       { text: "Resources", url: "/resources" },
     ],
   },
   {
     title: "Founders",
     links: [
+      { text: "MF2", url: "/founders" },
       { text: "Culture", url: "/founders" },
-      { text: "Events", url: "/events" },
-      { text: "Join", url: "/join" },
     ],
   },
   {

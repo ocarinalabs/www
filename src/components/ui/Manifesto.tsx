@@ -9,11 +9,11 @@ export const Manifesto = () => {
         <div className="flex flex-col items-center">
           <div className="flex flex-row items-center gap-2 mb-2">
             <span className="text-4xl text-white tracking-tight font-gambetta">
-              Korrect.
+              Korrect
             </span>
           </div>
           <span className="text-xs text-gray-400 mb-8 font-mono">
-            building AI the right way. aligned, safe, beneficial.
+            the ai safety company
           </span>
         </div>
       </header>
@@ -103,20 +103,18 @@ export const Manifesto = () => {
           That&apos;s why Korrect exists.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          We&apos;re not racing to build the most capable AI. We&apos;re
-          building AI that remains aligned as it grows powerful. The
-          &quot;Safer&quot; path from AI 2027 - where humanity keeps control.
+          We&apos;re not racing to build AI. We&apos;re testing whether AI 
+          actually does what humans want - not just what it claims.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Our approach: Radical transparency. Every model thinks in
-          interpretable chains of thought. No &quot;neuralese&quot; black boxes
-          where deception can hide. Yes, this makes our models temporarily less
-          capable. We accept that trade-off.
+          Our approach: Independent verification. We run the tests companies 
+          won&apos;t run. We look for deception they don&apos;t want to find. 
+          We publish the failures they won&apos;t publish.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          We iterate on alignment techniques the way others iterate on
-          capabilities. We catch deception early. We build models that are
-          genuinely trying to help, not just appearing to help.
+          We develop detection methods, evaluation frameworks, and safety 
+          benchmarks. We catch models lying, sandbagging, and scheming - 
+          before they&apos;re deployed.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           Most importantly: we share everything. Our failures, our successes,
@@ -127,8 +125,19 @@ export const Manifesto = () => {
 
       <section className="mb-8 space-y-4">
         <h3 className="text-xl font-semibold text-white font-gambetta">
-          We&apos;re proving alignment is commercially viable.
+          Here&apos;s what else we&apos;re building.
         </h3>
+        <p className="text-sm text-gray-300 font-sans">
+          <Link
+            href="/labs"
+            className="underline hover:text-blue-400 transition-colors"
+          >
+            Labs
+          </Link>{" "}
+          is where we test for the problems AI 2027 warns about. Model deception. 
+          Sandbagging. Misalignment. We develop detection methods and evaluation 
+          frameworks. We publish everything - especially the failures.
+        </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
             href="/robin"
@@ -142,25 +151,14 @@ export const Manifesto = () => {
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
-            href="/labs"
-            className="underline hover:text-blue-400 transition-colors"
-          >
-            Labs
-          </Link>{" "}
-          is where we solve the hard problems AI 2027 warns about. Mechanistic
-          interpretability. Robust oversight. Alignment techniques that work at
-          scale. We publish everything - successes and failures alike.
-        </p>
-        <p className="text-sm text-gray-300 font-sans">
-          <Link
             href="/founders"
             className="underline hover:text-blue-400 transition-colors"
           >
             Founders
           </Link>{" "}
-          brings together builders who understand the stakes. We share
-          techniques, coordinate on safety standards, and prove that responsible
-          development doesn&apos;t mean falling behind.
+          brings Silicon Valley startup culture to Malaysia and beyond. Through 
+          MF2, we give builders the tools to launch fast - with safety built in. 
+          Because the next great AI company could come from KL, not just SF.
         </p>
       </section>
 
@@ -180,16 +178,16 @@ export const Manifesto = () => {
           when we don&apos;t know something and slowing down to figure it out.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          If you&apos;re building AI, we want to share what we&apos;ve learned.
-          If you&apos;re researching alignment, we want to support your work. If
-          you believe AI must be built correctly, not just quickly - reach out.
+          If you&apos;re building AI, use our tests to verify it&apos;s safe.
+          If you&apos;re researching alignment, let&apos;s collaborate. If
+          you believe AI must work for humanity, not against it - reach out.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
-            href="mailto:build@korrect.ai"
+            href="mailto:build@korrectai.com"
             className="underline hover:text-blue-400 transition-colors"
           >
-            build@korrect.ai
+            build@korrectai.com
           </Link>
         </p>
       </section>
