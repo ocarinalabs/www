@@ -64,6 +64,20 @@ export default function manifest(): MetadataRoute.Manifest {
         url: "/founders",
         icons: [{ src: "/icon?size=96", sizes: "96x96" }],
       },
+      {
+        name: "Culture",
+        short_name: "Culture",
+        description: "Bringing Silicon Valley to KL",
+        url: "/culture",
+        icons: [{ src: "/icon?size=96", sizes: "96x96" }],
+      },
+      {
+        name: "MF2",
+        short_name: "MF2",
+        description: "Move F*cking Fast Stack",
+        url: "/mf2",
+        icons: [{ src: "/icon?size=96", sizes: "96x96" }],
+      },
     ],
   };
 }

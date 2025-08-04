@@ -134,14 +134,14 @@ const defaultMenuItems: MenuItem[] = [
   {
     title: "Founders",
     links: [
-      { text: "MF2", url: "/founders" },
-      { text: "Culture", url: "/founders" },
+      { text: "Culture", url: "/culture" },
+      { text: "MF2", url: "/mf2" },
     ],
   },
   {
     title: "Robin",
     links: [
-      { text: "Product", url: "/robin" },
+      { text: "Solution", url: "/robin" },
       { text: "Docs", url: "https://docs.robin.now" },
     ],
   },
