@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Book } from "./book";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 type Chapter = {
   id: number;
@@ -50,6 +51,8 @@ const chapters: Chapter[] = [
 ];
 
 export const Culture = () => {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="container mx-auto px-6 pb-10 max-w-6xl relative">
       <header className="mb-12 flex justify-center">
@@ -74,12 +77,12 @@ export const Culture = () => {
       </section>
 
       {/* Chapters Grid */}
-      <section className="mb-12 flex items-center justify-center">
+      <section className={`mb-12 flex ${isMobile ? 'flex-col' : ''} items-center justify-center`}>
         {chapters.map((chapter) => (
           <Link
             key={chapter.id}
             href={chapter.href}
-            className="group relative mx-8"
+            className={`group relative ${isMobile ? 'my-4' : 'mx-8'}`}
           >
             <Book depth={10} color={chapter.color}>
               <div className="p-3 mb-2 grid gap-3">
