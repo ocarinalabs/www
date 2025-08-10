@@ -52,7 +52,7 @@ const chapters: Chapter[] = [
 
 export const Culture = () => {
   const isMobile = useIsMobile();
-  
+
   return (
     <div className="container mx-auto px-6 pb-10 max-w-6xl relative">
       <header className="mb-12 flex justify-center">
@@ -71,32 +71,32 @@ export const Culture = () => {
       {/* Introduction */}
       <section className="mb-12 max-w-3xl mx-auto text-center">
         <p className="text-sm text-gray-300 font-sans">
-          They have the same 24 hours. The same keyboards. The same Stack Overflow. 
-          The only difference between a developer in KL and one in SF? The belief that they can.
+          They have the same 24 hours. The same keyboards. The same Stack
+          Overflow. The only difference between a developer in KL and one in SF?
+          The belief that they can.
         </p>
       </section>
 
       {/* Chapters Grid */}
-      <section className={`mb-12 flex ${isMobile ? 'flex-col' : ''} items-center justify-center`}>
+      <section
+        className={`mb-12 flex ${
+          isMobile ? "flex-col" : ""
+        } items-center justify-center`}
+      >
         {chapters.map((chapter) => (
           <Link
             key={chapter.id}
             href={chapter.href}
-            className={`group relative ${isMobile ? 'my-4' : 'mx-8'}`}
+            className={`group relative ${isMobile ? "my-4" : "mx-8"}`}
           >
             <Book depth={10} color={chapter.color}>
               <div className="p-3 mb-2 grid gap-3">
-                <h1 className="font-semibold text-left">
-                  {chapter.subtitle}
-                </h1>
+                <h1 className="font-semibold text-left">{chapter.subtitle}</h1>
               </div>
             </Book>
           </Link>
         ))}
       </section>
-
-
-
     </div>
   );
 };

@@ -103,18 +103,18 @@ export const Manifesto = () => {
           That&apos;s why Korrect exists.
         </h3>
         <p className="text-sm text-gray-300 font-sans">
-          We&apos;re not racing to build AI. We&apos;re testing whether AI 
+          We&apos;re not racing to build AI. We&apos;re testing whether AI
           actually does what humans want - not just what it claims.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          Our approach: Independent verification. We run the tests companies 
-          won&apos;t run. We look for deception they don&apos;t want to find. 
-          We publish the failures they won&apos;t publish.
+          Our approach: Independent verification. We run the tests companies
+          won&apos;t run. We look for deception they don&apos;t want to find. We
+          publish the failures they won&apos;t publish.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          We develop detection methods, evaluation frameworks, and safety 
-          benchmarks. We catch models lying, sandbagging, and scheming - 
-          before they&apos;re deployed.
+          We develop detection methods, evaluation frameworks, and safety
+          benchmarks. We catch models lying, sandbagging, and scheming - before
+          they&apos;re deployed.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           Most importantly: we share everything. Our failures, our successes,
@@ -134,9 +134,10 @@ export const Manifesto = () => {
           >
             Labs
           </Link>{" "}
-          is where we test for the problems AI 2027 warns about. Model deception. 
-          Sandbagging. Misalignment. We develop detection methods and evaluation 
-          frameworks. We publish everything - especially the failures.
+          is where we test for the problems AI 2027 warns about. Model
+          deception. Sandbagging. Misalignment. We develop detection methods and
+          evaluation frameworks. We publish everything - especially the
+          failures.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link
@@ -156,8 +157,8 @@ export const Manifesto = () => {
           >
             Founders
           </Link>{" "}
-          brings Silicon Valley startup culture to Malaysia and beyond. Through 
-          MF2, we give builders the tools to launch fast - with safety built in. 
+          brings Silicon Valley startup culture to Malaysia and beyond. Through
+          MF2, we give builders the tools to launch fast - with safety built in.
           Because the next great AI company could come from KL, not just SF.
         </p>
       </section>
@@ -178,9 +179,9 @@ export const Manifesto = () => {
           when we don&apos;t know something and slowing down to figure it out.
         </p>
         <p className="text-sm text-gray-300 font-sans">
-          If you&apos;re building AI, use our tests to verify it&apos;s safe.
-          If you&apos;re researching alignment, let&apos;s collaborate. If
-          you believe AI must work for humanity, not against it - reach out.
+          If you&apos;re building AI, use our tests to verify it&apos;s safe. If
+          you&apos;re researching alignment, let&apos;s collaborate. If you
+          believe AI must work for humanity, not against it - reach out.
         </p>
         <p className="text-sm text-gray-300 font-sans">
           <Link

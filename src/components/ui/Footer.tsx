@@ -127,14 +127,14 @@ const defaultMenuItems: MenuItem[] = [
     title: "Labs",
     links: [
       { text: "Experiments", url: "/labs" },
-      { text: "AI Safety Malaysia", url: "https://aisafety.my" },
+      { text: "AI Safety Malaysia", url: "/ai-safety-malaysia" },
       { text: "Resources", url: "/resources" },
     ],
   },
   {
     title: "Founders",
     links: [
-      { text: "Culture", url: "/culture" },
+      { text: "Culture", url: "/founders" },
       { text: "MF2", url: "/mf2" },
     ],
   },
@@ -142,7 +142,7 @@ const defaultMenuItems: MenuItem[] = [
     title: "Robin",
     links: [
       { text: "Solution", url: "/robin" },
-      { text: "Docs", url: "https://docs.robin.now" },
+      { text: "Help Center", url: "/help" },
     ],
   },
   {

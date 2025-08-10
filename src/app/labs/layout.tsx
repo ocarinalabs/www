@@ -11,12 +11,10 @@ export default function LabsLayout({
   return (
     <div className="relative min-h-screen bg-black text-gray-300">
       <Header />
-      
+
       {/* Main content */}
       <main className="min-h-screen flex flex-col">
-        <div className="flex-1">
-          {children}
-        </div>
+        <div className="flex-1">{children}</div>
         <Footer />
       </main>
     </div>

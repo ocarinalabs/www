@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react";
 
-type SecondsMode = "smooth" | "tick1" | "tick2" | "highFreq"
+type SecondsMode = "smooth" | "tick1" | "tick2" | "highFreq";
 
 interface ClockProps {
-  initialTime?: Date
-  timeZone?: string
-  initialSecondsMode?: SecondsMode
+  initialTime?: Date;
+  timeZone?: string;
+  initialSecondsMode?: SecondsMode;
 }
 
 export function Clock({
@@ -16,128 +16,131 @@ export function Clock({
   initialSecondsMode = "smooth",
 }: ClockProps) {
   // Detect browser timezone if not provided
-  const detectedTimeZone = timeZone || Intl.DateTimeFormat().resolvedOptions().timeZone
-  
-  const [time, setTime] = useState(initialTime)
-  // secondsMode is intentionally not given a setter, as it's meant to be static after initial render
-  const [secondsMode] = useState<SecondsMode>(initialSecondsMode)
+  const detectedTimeZone =
+    timeZone || Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  const hourHandRef = useRef<HTMLDivElement>(null)
-  const minuteHandRef = useRef<HTMLDivElement>(null)
-  const secondHandContainerRef = useRef<HTMLDivElement>(null)
-  const secondHandShadowRef = useRef<HTMLDivElement>(null)
+  const [time, setTime] = useState(initialTime);
+  // secondsMode is intentionally not given a setter, as it's meant to be static after initial render
+  const [secondsMode] = useState<SecondsMode>(initialSecondsMode);
+
+  const hourHandRef = useRef<HTMLDivElement>(null);
+  const minuteHandRef = useRef<HTMLDivElement>(null);
+  const secondHandContainerRef = useRef<HTMLDivElement>(null);
+  const secondHandShadowRef = useRef<HTMLDivElement>(null);
 
   // Log the initial secondsMode to confirm it's being received
   useEffect(() => {
     console.log(
       "Clock component mounted. Initial secondsMode prop:",
       initialSecondsMode
-    )
-    console.log("Clock component state secondsMode:", secondsMode)
-  }, [initialSecondsMode, secondsMode])
+    );
+    console.log("Clock component state secondsMode:", secondsMode);
+  }, [initialSecondsMode, secondsMode]);
 
   useEffect(() => {
     console.log(
       "Clock component mounted. Initial secondsMode prop:",
       initialSecondsMode
-    )
-    console.log("Clock component state secondsMode:", secondsMode)
-  }, [initialSecondsMode, secondsMode])
+    );
+    console.log("Clock component state secondsMode:", secondsMode);
+  }, [initialSecondsMode, secondsMode]);
 
   const updateClockHands = useCallback(() => {
-    const now = new Date()
+    const now = new Date();
     const displayTime = new Date(
       now.toLocaleString("en-US", {
         timeZone: detectedTimeZone,
       })
-    )
-    setTime(displayTime)
+    );
+    setTime(displayTime);
 
-    const hours = displayTime.getHours() % 12
-    const minutes = displayTime.getMinutes()
-    const seconds = displayTime.getSeconds()
-    const milliseconds = displayTime.getMilliseconds()
+    const hours = displayTime.getHours() % 12;
+    const minutes = displayTime.getMinutes();
+    const seconds = displayTime.getSeconds();
+    const milliseconds = displayTime.getMilliseconds();
 
-    const hoursDegrees = hours * 30 + (minutes / 60) * 30
-    const minutesDegrees = minutes * 6 + (seconds / 60) * 0.1
+    const hoursDegrees = hours * 30 + (minutes / 60) * 30;
+    const minutesDegrees = minutes * 6 + (seconds / 60) * 0.1;
 
     if (hourHandRef.current) {
-      hourHandRef.current.style.transform = `rotate(${hoursDegrees}deg)`
+      hourHandRef.current.style.transform = `rotate(${hoursDegrees}deg)`;
     }
     if (minuteHandRef.current) {
-      minuteHandRef.current.style.transform = `rotate(${minutesDegrees}deg)`
+      minuteHandRef.current.style.transform = `rotate(${minutesDegrees}deg)`;
     }
 
-    let currentSecondsAngle = 0
+    let currentSecondsAngle = 0;
     // Log the secondsMode *inside* the function that uses it
     console.log(
       "--- updateClockHands called. Current secondsMode:",
       secondsMode
-    )
+    );
 
     switch (secondsMode) {
       case "tick1": // Tick every second (60 ticks per minute)
-        currentSecondsAngle = seconds * 6
+        currentSecondsAngle = seconds * 6;
         console.log(
           `Mode: Tick1, Seconds: ${seconds}, Calculated Angle: ${currentSecondsAngle}deg`
-        )
-        break
+        );
+        break;
       case "tick2": // Half-second ticks (120 ticks per minute)
         currentSecondsAngle =
-          Math.floor((seconds * 1000 + milliseconds) / 500) * 3
+          Math.floor((seconds * 1000 + milliseconds) / 500) * 3;
         console.log(
           `Mode: Tick2, Seconds: ${seconds}, Milliseconds: ${milliseconds}, Calculated Angle: ${currentSecondsAngle}deg`
-        )
-        break
+        );
+        break;
       case "highFreq": // High-frequency sweep (8 ticks per second)
-        currentSecondsAngle = ((seconds * 1000 + milliseconds) / 125) * 0.75
+        currentSecondsAngle = ((seconds * 1000 + milliseconds) / 125) * 0.75;
         console.log(
           `Mode: HighFreq, Seconds: ${seconds}, Milliseconds: ${milliseconds}, Calculated Angle: ${currentSecondsAngle}deg`
-        )
-        break
+        );
+        break;
       case "smooth": // Smooth movement over 60 seconds
       default:
-        currentSecondsAngle = seconds * 6 + (milliseconds / 1000) * 6
+        currentSecondsAngle = seconds * 6 + (milliseconds / 1000) * 6;
         console.log(
           `Mode: Smooth, Seconds: ${seconds}, Milliseconds: ${milliseconds}, Calculated Angle: ${currentSecondsAngle}deg`
-        )
-        break
+        );
+        break;
     }
 
-    const secondHandTransform = `rotate(${currentSecondsAngle}deg)`
+    const secondHandTransform = `rotate(${currentSecondsAngle}deg)`;
     if (secondHandContainerRef.current) {
-      secondHandContainerRef.current.style.transform = secondHandTransform
-      console.log(`Applied transform to second hand: ${secondHandTransform}`)
+      secondHandContainerRef.current.style.transform = secondHandTransform;
+      console.log(`Applied transform to second hand: ${secondHandTransform}`);
     } else {
       console.warn(
         "secondHandContainerRef.current is null, cannot apply transform."
-      )
+      );
     }
 
     if (secondHandShadowRef.current) {
-      secondHandShadowRef.current.style.transform = `rotate(${currentSecondsAngle + 0.5}deg)`
+      secondHandShadowRef.current.style.transform = `rotate(${
+        currentSecondsAngle + 0.5
+      }deg)`;
     }
-  }, [secondsMode, detectedTimeZone])
+  }, [secondsMode, detectedTimeZone]);
 
   useEffect(() => {
-    updateClockHands()
+    updateClockHands();
 
     const minuteInterval = setInterval(() => {
-      updateClockHands()
-    }, 60000)
+      updateClockHands();
+    }, 60000);
 
-    let animationFrameId: number
+    let animationFrameId: number;
     const animateSeconds = () => {
-      updateClockHands()
-      animationFrameId = requestAnimationFrame(animateSeconds)
-    }
-    animateSeconds()
+      updateClockHands();
+      animationFrameId = requestAnimationFrame(animateSeconds);
+    };
+    animateSeconds();
 
     return () => {
-      clearInterval(minuteInterval)
-      cancelAnimationFrame(animationFrameId)
-    }
-  }, [updateClockHands])
+      clearInterval(minuteInterval);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [updateClockHands]);
 
   const months = [
     "Jan",
@@ -152,17 +155,17 @@ export function Clock({
     "Oct",
     "Nov",
     "Dec",
-  ]
-  const dateDisplay = `${months[time.getMonth()]} ${time.getDate()}`
+  ];
+  const dateDisplay = `${months[time.getMonth()]} ${time.getDate()}`;
 
-  const hourMarks = []
+  const hourMarks = [];
   for (let i = 0; i < 60; i++) {
     if (i % 5 === 0) {
-      const hourIndex = i / 5
-      const angle = (i * 6 * Math.PI) / 180
-      const radius = 145
-      const left = 175 + Math.sin(angle) * radius - 15
-      const top = 175 - Math.cos(angle) * radius - 10
+      const hourIndex = i / 5;
+      const angle = (i * 6 * Math.PI) / 180;
+      const radius = 145;
+      const left = 175 + Math.sin(angle) * radius - 15;
+      const top = 175 - Math.cos(angle) * radius - 10;
       hourMarks.push(
         <div
           key={`num-${i}`}
@@ -171,14 +174,14 @@ export function Clock({
             left: `${left}px`,
             top: `${top}px`,
             fontSize: "16px",
-            fontWeight: 400, 
+            fontWeight: 400,
             textShadow: "0 1px 1px rgba(255, 255, 255, 0.2)",
-            zIndex: 15,  
+            zIndex: 15,
           }}
         >
           {hourIndex === 0 ? "12" : hourIndex.toString()}
         </div>
-      )
+      );
     } else {
       hourMarks.push(
         <div
@@ -191,7 +194,7 @@ export function Clock({
             opacity: 1,
           }}
         />
-      )
+      );
     }
   }
 
@@ -270,5 +273,5 @@ export function Clock({
         </div>
       </div>
     </div>
-  )
+  );
 }
