@@ -199,13 +199,13 @@ export default function LaunchPage() {
           {/* Navigation */}
           <nav className="mt-16 flex justify-between items-center">
             <Link
-              href="/culture/tools"
+              href="/founders/tools"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               ← Book Three: Tools
             </Link>
             <Link
-              href="/culture/learn"
+              href="/founders/learn"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               Book Five: Learn →

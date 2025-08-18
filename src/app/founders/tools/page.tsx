@@ -174,13 +174,13 @@ export default function ToolsPage() {
           {/* Navigation */}
           <nav className="mt-16 flex justify-between items-center">
             <Link
-              href="/culture/speed"
+              href="/founders/speed"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               ← Book Two: Speed
             </Link>
             <Link
-              href="/culture/launch"
+              href="/founders/launch"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               Book Four: Launch →

@@ -121,13 +121,13 @@ export default function MindsetPage() {
           {/* Navigation */}
           <nav className="mt-16 flex justify-between items-center">
             <Link
-              href="/culture"
+              href="/founders"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               ← Back to Culture
             </Link>
             <Link
-              href="/culture/speed"
+              href="/founders/speed"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               Book Two: Speed →

@@ -163,13 +163,13 @@ export default function SpeedPage() {
           {/* Navigation */}
           <nav className="mt-16 flex justify-between items-center">
             <Link
-              href="/culture/mindset"
+              href="/founders/mindset"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               ← Book One: Mindset
             </Link>
             <Link
-              href="/culture/tools"
+              href="/founders/tools"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               Book Three: Tools →

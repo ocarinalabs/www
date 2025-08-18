@@ -245,13 +245,13 @@ export default function LearnPage() {
           {/* Navigation */}
           <nav className="mt-16 flex justify-between items-center">
             <Link
-              href="/culture/launch"
+              href="/founders/launch"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               ← Book Four: Launch
             </Link>
             <Link
-              href="/culture"
+              href="/founders"
               className="text-sm text-gray-400 hover:text-white transition-colors"
             >
               Back to Library →
