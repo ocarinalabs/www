@@ -1,0 +1,53 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "extends": [
+    "ultracite/biome/core",
+    "ultracite/biome/react",
+    "ultracite/biome/next"
+  ],
+  "javascript": {
+    "globals": ["Bun"]
+  },
+  "linter": {
+    "rules": {
+      "style": {
+        "useConsistentTypeDefinitions": {
+          "level": "error",
+          "options": {
+            "style": "type"
+          }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": [
+        "packages/analytics/index.ts",
+        "packages/cms/components/*.tsx",
+        "apps/*/postcss.config.mjs"
+      ],
+      "linter": {
+        "rules": {
+          "performance": {
+            "noBarrelFile": "off"
+          }
+        }
+      }
+    }
+  ],
+  "files": {
+    "includes": [
+      "**/*",
+      "!packages/design-system/components/ui",
+      "!packages/design-system/lib",
+      "!packages/design-system/hooks",
+      "!packages/cms/basehub-types.d.ts"
+    ]
+  }
+}
