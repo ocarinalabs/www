@@ -1,0 +1,77 @@
+@import "@repo/design-system/styles/globals.css";
+
+@theme inline {
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-serif), ui-serif, Georgia, serif;
+  --color-safe: var(--safe);
+  --color-danger: var(--danger);
+  --color-caution: var(--caution);
+}
+
+:root {
+  --background: #f8fbf8;
+  --foreground: oklch(0.27 0.07 280);
+  --card: oklch(0.955 0.008 75);
+  --card-foreground: oklch(0.27 0.07 280);
+  --popover: oklch(0.96 0.006 75);
+  --popover-foreground: oklch(0.27 0.07 280);
+  --primary: oklch(0.55 0.15 50);
+  --primary-foreground: oklch(0.97 0.005 75);
+  --secondary: oklch(0.92 0.01 75);
+  --secondary-foreground: oklch(0.27 0.07 280);
+  --muted: oklch(0.92 0.008 75);
+  --muted-foreground: oklch(0.6 0.025 290);
+  --accent: oklch(0.92 0.008 75);
+  --accent-foreground: oklch(0.27 0.07 280);
+  --destructive: oklch(0.52 0.15 22);
+  --destructive-foreground: oklch(0.97 0.005 75);
+  --success: oklch(0.53 0.09 165);
+  --border: oklch(0.82 0.015 285);
+  --input: oklch(0.82 0.015 285);
+  --ring: oklch(0.55 0.15 50);
+  --safe: oklch(0.53 0.09 165);
+  --danger: oklch(0.52 0.15 22);
+  --caution: oklch(0.7 0.14 70);
+  --chart-1: oklch(0.55 0.15 50);
+  --chart-2: oklch(0.53 0.09 165);
+  --chart-3: oklch(0.27 0.07 280);
+  --chart-4: oklch(0.7 0.14 70);
+  --chart-5: oklch(0.52 0.15 22);
+  --radius: 0.25rem;
+  --sidebar: oklch(0.94 0.008 75);
+  --sidebar-foreground: oklch(0.27 0.07 280);
+  --sidebar-primary: oklch(0.55 0.15 50);
+  --sidebar-primary-foreground: oklch(0.97 0.005 75);
+  --sidebar-accent: oklch(0.92 0.008 75);
+  --sidebar-accent-foreground: oklch(0.27 0.07 280);
+  --sidebar-border: oklch(0.82 0.015 285);
+  --sidebar-ring: oklch(0.55 0.15 50);
+  --dashed-line-color: #cbcbcb;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  position: fixed;
+  inset: -50%;
+  z-index: 1;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  content: "";
+  background:
+    repeating-conic-gradient(
+      #000 0.00001%,
+      transparent 0.0002%,
+      transparent 0.0004%,
+      #000 0.0005%
+    )
+    50% 50% / 600px 600px;
+  mix-blend-mode: multiply;
+  opacity: 0.1;
+}
