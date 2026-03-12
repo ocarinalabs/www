@@ -1,4 +1,3 @@
-import { withGlue } from "@getglue/next-plugin";
 import { withCMS } from "@repo/cms/next-config";
 import { config, withAnalyzer } from "@repo/next-config";
 import type { NextConfig } from "next";
@@ -24,4 +23,4 @@ if (process.env.NODE_ENV === "production") {
 if (env.ANALYZE === "true") {
   nextConfig = withAnalyzer(nextConfig);
 }
-export default withGlue(withCMS(nextConfig));
+export default withCMS(nextConfig);
