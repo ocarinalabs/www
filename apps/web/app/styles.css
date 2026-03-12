@@ -49,6 +49,10 @@
   --dashed-line-color: #cbcbcb;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   font-optical-sizing: auto;
