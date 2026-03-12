@@ -21,7 +21,7 @@
     "@biomejs/biome": "2.4.0",
     "@repo/typescript-config": "*",
     "@turbo/gen": "^2.8.16",
-    "@types/node": "^25.4.0",
+    "@types/node": "^25.5.0",
     "lefthook": "^2.1.4",
     "lint-staged": "^16.3.3",
     "turbo": "^2.8.16",
