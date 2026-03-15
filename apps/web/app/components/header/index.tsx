@@ -17,6 +17,14 @@ export const Header = () => (
         >
           The Score
         </Link>
+        <a
+          className="text-[15px] text-foreground/40 transition-opacity duration-200 hover:text-foreground/60"
+          href="https://ocarina.sh"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Quaver
+        </a>
         <Link
           className="text-[15px] text-foreground/40 transition-opacity duration-200 hover:text-foreground/60"
           href="/blog"
