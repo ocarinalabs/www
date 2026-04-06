@@ -4,10 +4,10 @@
     "@repo/cms/typescript-config.json"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@repo/*": ["../../packages/*"]
+      "@repo/*": ["../../packages/*"],
+      "content-collections": ["./.content-collections/generated"]
     },
     "strictNullChecks": true
   },

@@ -3,23 +3,28 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "[ -z \"$BASEHUB_TOKEN\" ] && echo 'Skipping CMS: set BASEHUB_TOKEN to enable' || basehub dev",
-    "build": "[ -z \"$BASEHUB_TOKEN\" ] && echo 'Skipping CMS build: set BASEHUB_TOKEN to enable' || basehub build",
-    "analyze": "basehub",
+    "dev": "echo 'CMS ready (content-collections runs from web app)'",
+    "build": "echo 'CMS ready (content-collections runs from web app)'",
+    "analyze": "echo 'CMS ready'",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "dependencies": {
-    "@t3-oss/env-nextjs": "^0.13.10",
+    "@content-collections/mdx": "^0.2.2",
+    "@t3-oss/env-nextjs": "^0.13.11",
     "basehub": "^9.5.3",
     "react": "19.2.4",
+    "remark-gfm": "^4.0.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@content-collections/cli": "^0.1.9",
+    "@content-collections/core": "^0.14.3",
+    "@content-collections/next": "^0.2.11",
     "@repo/typescript-config": "*",
-    "@types/node": "25.3.3",
+    "@types/node": "25.5.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "next": "16.1.6"
+    "next": "16.2.1"
   }
 }
