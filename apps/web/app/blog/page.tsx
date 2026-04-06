@@ -1,5 +1,7 @@
+import { posts } from "@repo/cms";
 import { createMetadata } from "@repo/seo/metadata";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { DashedLine } from "../components/dashed-line";
 
 export const metadata: Metadata = createMetadata({
@@ -8,65 +10,54 @@ export const metadata: Metadata = createMetadata({
     "Writing on AI agent safety, independent testing, and why alignment is a survival requirement.",
 });
 
-const posts = [
-  {
-    title: "Rideshare-Bench: What happens when you give Claude a city",
-    date: "Coming soon",
-    description:
-      "We built a simulated rideshare environment and tested how frontier models handle safety-critical tradeoffs. The results were not what we expected.",
-  },
-  {
-    title: "The Meta inbox incident and the limits of prompt-based safety",
-    date: "Coming soon",
-    description:
-      "A safety researcher's agent mass-deleted her emails because context compaction dropped the safety instruction. What this means for everyone building agents.",
-  },
-  {
-    title: "Why independent testing matters",
-    date: "Coming soon",
-    description:
-      "Every safety tool helps companies test their own agents. Nobody tests them from the outside. We're building that institution.",
-  },
-];
+const BlogPage = async () => {
+  const allPosts = await posts.getAll();
 
-const BlogPage = () => (
-  <main className="relative">
-    <div className="pointer-events-none absolute inset-0 z-10 mx-auto flex w-full max-w-[1560px] justify-between">
-      <DashedLine direction="left" />
-      <DashedLine direction="right" />
-    </div>
+  return (
+    <main className="relative">
+      <div className="pointer-events-none absolute inset-0 z-10 mx-auto hidden w-full max-w-[1560px] justify-between sm:flex">
+        <DashedLine direction="left" />
+        <DashedLine direction="right" />
+      </div>
 
-    <div className="flex justify-center px-8 md:px-16 lg:px-8">
-      <div className="w-full max-w-[720px] py-24">
-        <h1 className="font-[family-name:var(--font-heading)] text-[36px] text-black leading-[1.15] tracking-tight sm:text-[48px]">
-          Blog
-        </h1>
+      <div className="flex justify-center px-6 sm:px-8 md:px-16 lg:px-8">
+        <div className="w-full max-w-[720px] py-16 sm:py-24">
+          <h1 className="font-[family-name:var(--font-heading)] text-[32px] text-black leading-[1.15] tracking-tight sm:text-[48px]">
+            Blog
+          </h1>
 
-        <div className="relative mt-16">
-          <DashedLine direction="top" />
+          <div className="relative mt-10 sm:mt-12">
+            <DashedLine direction="top" />
 
-          <div className="space-y-12 pt-16">
-            {posts.map((post, i) => (
-              <article key={post.title}>
-                <span className="mb-3 block font-mono text-foreground/25 text-xs tracking-wider">
-                  {post.date}
-                </span>
-                <h2 className="mb-2 font-medium text-[20px] text-foreground/75 leading-snug tracking-tight sm:text-[22px]">
-                  {post.title}
-                </h2>
-                <p className="text-[15px] text-foreground/40 leading-relaxed">
-                  {post.description}
-                </p>
-                {i < posts.length - 1 && (
-                  <div className="mt-12 h-px border-foreground/10 border-t border-dashed" />
-                )}
-              </article>
-            ))}
+            <div className="space-y-12 pt-10 sm:pt-12">
+              {allPosts.map((post, i) => (
+                <article key={post._slug}>
+                  <span className="mb-3 block font-mono text-foreground/45 text-xs tracking-wider">
+                    {new Date(post.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  <Link className="group" href={`/blog/${post._slug}`}>
+                    <h2 className="mb-2 font-medium text-[20px] text-foreground/90 leading-snug tracking-tight transition-opacity group-hover:opacity-70 sm:text-[22px]">
+                      {post._title}
+                    </h2>
+                  </Link>
+                  <p className="text-[15px] text-foreground/65 leading-relaxed">
+                    {post.description}
+                  </p>
+                  {i < allPosts.length - 1 && (
+                    <div className="mt-12 h-px border-foreground/10 border-t border-dashed" />
+                  )}
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-);
+    </main>
+  );
+};
 
 export default BlogPage;
