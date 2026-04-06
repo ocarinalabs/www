@@ -1,0 +1,336 @@
+/**
+ * ILMU AI Provider for Vercel AI SDK
+ * Custom provider for AI Hackerdorm Org
+ * https://api.ytlailabs.tech
+ *
+ * As of 20 Jan 2026
+ */
+
+import type {
+  LanguageModelV3,
+  EmbeddingModelV3,
+} from "@ai-sdk/provider";
+import {
+  OpenAICompatibleChatLanguageModel,
+  OpenAICompatibleCompletionLanguageModel,
+  OpenAICompatibleEmbeddingModel,
+} from "@ai-sdk/openai-compatible";
+import {
+  type FetchFunction,
+  loadApiKey,
+  withoutTrailingSlash,
+} from "@ai-sdk/provider-utils";
+
+// ============================================
+// Model ID Types
+// ============================================
+
+/**
+ * Available ILMU Chat/Text Generation Model IDs
+ * Includes vision models as they use the chat completions API
+ */
+export type ILMUChatModelId =
+  | "ILMU-text"
+  | "ILMU-text-free-safe"
+  | "ilmu-text-free-v2"
+  | "ILMU-vision"
+  | "ilmu-vision-trial";
+
+/**
+ * Available ILMU Completion Model IDs
+ */
+export type ILMUCompletionModelId = "ILMU-text";
+
+/**
+ * Available ILMU Embedding Model IDs
+ */
+export type ILMUEmbeddingModelId = "ILMU-embedding";
+
+/**
+ * Available ILMU Image Model IDs
+ */
+export type ILMUImageModelId = "ILMU-image";
+
+/**
+ * Available ILMU Speech-to-Text (ASR) Model IDs
+ */
+export type ILMUASRModelId = "ILMU-asr" | "ilmu-preview-asr";
+
+/**
+ * All available ILMU Model IDs
+ */
+export type ILMUModelId =
+  | ILMUChatModelId
+  | ILMUCompletionModelId
+  | ILMUASRModelId;
+
+// ============================================
+// Provider Settings
+// ============================================
+
+export interface ILMUProviderSettings {
+  /**
+   * ILMU API Key.
+   * @default process.env.ILMU_API_KEY
+   */
+  apiKey?: string;
+
+  /**
+   * Base URL for the ILMU API.
+   * @default "https://api.ytlailabs.tech/v1"
+   */
+  baseURL?: string;
+
+  /**
+   * Custom headers to include in requests.
+   */
+  headers?: Record<string, string>;
+
+  /**
+   * Optional custom url query parameters to include in request urls.
+   */
+  queryParams?: Record<string, string>;
+
+  /**
+   * Custom fetch implementation. You can use it as a middleware to intercept requests,
+   * or to provide a custom fetch implementation for e.g. testing.
+   */
+  fetch?: FetchFunction;
+
+  /**
+   * Whether to include usage information in streaming responses.
+   * @default true
+   */
+  includeUsage?: boolean;
+}
+
+// ============================================
+// Provider Interface
+// ============================================
+
+export interface ILMUProvider {
+  /**
+   * Creates a model for text generation (defaults to chat model).
+   */
+  (modelId: ILMUChatModelId): LanguageModelV3;
+
+  /**
+   * Creates a chat model for text generation.
+   */
+  chatModel(modelId: ILMUChatModelId): LanguageModelV3;
+
+  /**
+   * Creates a completion model for text generation.
+   */
+  completionModel(modelId: ILMUCompletionModelId): LanguageModelV3;
+
+  /**
+   * Creates an embedding model for text embeddings.
+   */
+  embeddingModel(modelId: ILMUEmbeddingModelId): EmbeddingModelV3;
+}
+
+// ============================================
+// Provider Factory
+// ============================================
+
+/**
+ * Creates an ILMU provider instance.
+ *
+ * @example
+ * ```ts
+ * import { createILMU } from 'ilmu-aisdk-provider';
+ *
+ * const ilmu = createILMU({
+ *   apiKey: process.env.ILMU_API_KEY,
+ * });
+ *
+ * // Use with generateText
+ * const { text } = await generateText({
+ *   model: ilmu('ILMU-text'),
+ *   prompt: 'Hello!',
+ * });
+ *
+ * // Or use specific model methods
+ * const { text } = await generateText({
+ *   model: ilmu.chatModel('ILMU-text'),
+ *   prompt: 'Hello!',
+ * });
+ * ```
+ */
+export function createILMU(options: ILMUProviderSettings = {}): ILMUProvider {
+  const baseURL = withoutTrailingSlash(
+    options.baseURL ?? "https://api.ytlailabs.tech/v1"
+  );
+
+  const getHeaders = () => ({
+    Authorization: `Bearer ${loadApiKey({
+      apiKey: options.apiKey,
+      environmentVariableName: "ILMU_API_KEY",
+      description: "ILMU API key",
+    })}`,
+    ...options.headers,
+  });
+
+  // Common configuration for all model types
+  const getCommonConfig = (modelType: string) => ({
+    provider: `ilmu.${modelType}`,
+    url: ({ path }: { path: string }) => {
+      const url = new URL(`${baseURL}${path}`);
+      if (options.queryParams) {
+        url.search = new URLSearchParams(options.queryParams).toString();
+      }
+      return url.toString();
+    },
+    headers: getHeaders,
+    fetch: options.fetch,
+  });
+
+  const createChatModel = (modelId: ILMUChatModelId): LanguageModelV3 => {
+    return new OpenAICompatibleChatLanguageModel(modelId, {
+      ...getCommonConfig("chat"),
+      includeUsage: options.includeUsage ?? true,
+      supportsStructuredOutputs: true,
+      // Transform request body for VLLM compatibility
+      transformRequestBody: (body) => {
+        const { reasoning_effort, ...rest } = body;
+        
+        // ilmu-text-free-v2 only supports boolean reasoning (true/false), not effort levels
+        if (modelId === "ilmu-text-free-v2") {
+          // Any reasoning_effort value means enable thinking, otherwise disable
+          const enableThinking = !!reasoning_effort;
+          return {
+            ...rest,
+            chat_template_kwargs: {
+              enable_thinking: enableThinking,
+            },
+          };
+        }
+        
+        // For other models, use reasoning_effort levels (low, medium, high)
+        if (reasoning_effort && ['low', 'medium', 'high'].includes(reasoning_effort)) {
+          return {
+            ...rest,
+            reasoning_effort,
+            chat_template_kwargs: {
+              enable_thinking: true,
+            },
+          };
+        }
+        // Otherwise disable thinking (VLLM has it enabled by default)
+        return {
+          ...rest,
+          chat_template_kwargs: {
+            enable_thinking: false,
+          },
+        };
+      },
+    });
+  };
+
+  const createCompletionModel = (
+    modelId: ILMUCompletionModelId
+  ): LanguageModelV3 => {
+    return new OpenAICompatibleCompletionLanguageModel(modelId, {
+      ...getCommonConfig("completion"),
+      includeUsage: options.includeUsage ?? true,
+    });
+  };
+
+  const createEmbeddingModel = (
+    modelId: ILMUEmbeddingModelId
+  ): EmbeddingModelV3 => {
+    return new OpenAICompatibleEmbeddingModel(modelId, {
+      ...getCommonConfig("embedding"),
+    });
+  };
+
+  // Main provider function (defaults to chat model)
+  const provider = (modelId: ILMUChatModelId): LanguageModelV3 =>
+    createChatModel(modelId);
+
+  // Attach model factory methods
+  provider.chatModel = createChatModel;
+  provider.completionModel = createCompletionModel;
+  provider.embeddingModel = createEmbeddingModel;
+
+  return provider as ILMUProvider;
+}
+
+// ============================================
+// Default Instance
+// ============================================
+
+/**
+ * Default ILMU provider instance.
+ * Uses ILMU_API_KEY environment variable for authentication.
+ *
+ * @example
+ * ```ts
+ * import { ilmu } from 'ilmu-aisdk-provider';
+ * import { generateText } from 'ai';
+ *
+ * const { text } = await generateText({
+ *   model: ilmu('ILMU-text'),
+ *   prompt: 'Hello!',
+ * });
+ * ```
+ */
+export const ilmu = createILMU();
+
+// ============================================
+// Model Constants
+// ============================================
+
+/**
+ * Available ILMU models with their capabilities
+ */
+export const ILMU_MODELS = {
+  // Text Generation Models
+  text: {
+    id: "ILMU-text" as const,
+    name: "ILMU Text",
+    type: "TEXT_GENERATION",
+    description: "Main text generation model",
+  },
+  textFreeSafe: {
+    id: "ILMU-text-free-safe" as const,
+    name: "ILMU Text Free Safe",
+    type: "TEXT_GENERATION",
+    description: "Safe text generation model with content filtering",
+  },
+  textFreeV2: {
+    id: "ilmu-text-free-v2" as const,
+    name: "ILMU Text Free V2",
+    type: "TEXT_GENERATION",
+    description: "Free text generation model version 2",
+  },
+
+  // Vision Models
+  vision: {
+    id: "ILMU-vision" as const,
+    name: "ILMU Vision",
+    type: "VISION",
+    description: "Vision model for image understanding",
+  },
+  visionTrial: {
+    id: "ilmu-vision-trial" as const,
+    name: "Ilmu Vision Trial",
+    type: "VISION",
+    description: "Trial version of the vision model",
+  },
+
+  // Speech-to-Text Models
+  asr: {
+    id: "ILMU-asr" as const,
+    name: "ILMU ASR",
+    type: "SPEECH_TO_TEXT",
+    description: "Automatic speech recognition model",
+  },
+  asrPreview: {
+    id: "ilmu-preview-asr" as const,
+    name: "Ilmu Preview ASR",
+    type: "SPEECH_TO_TEXT",
+    description: "Preview version of the ASR model",
+  },
+} as const;
