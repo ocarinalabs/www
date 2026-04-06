@@ -6,7 +6,7 @@ export const Hero = () => (
     <DitheredOcarina />
 
     <div className="relative z-10 flex justify-center px-6 sm:px-8 md:px-16 lg:px-8">
-      <div className="w-full max-w-[720px] pt-6 pb-20 sm:pt-8 sm:pb-32">
+      <div className="w-full max-w-[720px] pt-6 pb-20 sm:pt-8 sm:pb-32 lg:max-w-[900px]">
         <h1 className="font-[family-name:var(--font-heading)] text-[28px] text-black leading-[1.15] tracking-tight sm:text-[44px] md:text-[52px]">
           Simulated worlds to test
           <br />
