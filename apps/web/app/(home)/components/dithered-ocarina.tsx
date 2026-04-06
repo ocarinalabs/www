@@ -150,7 +150,10 @@ export function DitheredOcarina() {
     }
 
     timeRef.current += 0.016;
-    animRef.current = requestAnimationFrame(render);
+
+    if (timeRef.current < 3) {
+      animRef.current = requestAnimationFrame(render);
+    }
   }, []);
 
   useEffect(() => {
@@ -199,7 +202,7 @@ export function DitheredOcarina() {
 
   return (
     <div className="pointer-events-none absolute inset-0 flex items-center justify-end overflow-hidden">
-      <div className="flex h-full w-[60%] translate-y-[4%] items-center justify-center">
+      <div className="flex h-full w-[80%] translate-y-[4%] items-center justify-center opacity-30 sm:w-[60%] sm:opacity-100">
         <canvas ref={canvasRef} />
       </div>
     </div>
