@@ -3,15 +3,13 @@ import { AnalyticsProvider } from "@repo/analytics/provider";
 import { DesignSystemProvider } from "@repo/design-system";
 import { fonts } from "@repo/design-system/lib/fonts";
 import { cn } from "@repo/design-system/lib/utils";
-import { Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 
-const instrumentSerif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: ["400"],
+const perfectlyNineties = localFont({
+  src: "../public/fonts/perfectly-nineties-regular.otf",
   variable: "--font-serif",
   display: "swap",
 });
@@ -30,7 +28,7 @@ const RootLayout = ({ children }: RootLayoutProperties) => (
   <html
     className={cn(
       fonts,
-      instrumentSerif.variable,
+      perfectlyNineties.variable,
       satoshi.variable,
       "scroll-smooth"
     )}
