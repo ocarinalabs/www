@@ -12,7 +12,7 @@ export const metadata: Metadata = createMetadata({
 
 const Page = () => (
   <main className="relative">
-    <div className="pointer-events-none absolute inset-0 z-10 mx-auto flex w-full max-w-[1560px] justify-between">
+    <div className="pointer-events-none absolute inset-0 z-10 mx-auto hidden w-full max-w-[1560px] justify-between sm:flex">
       <DashedLine direction="left" />
       <DashedLine direction="right" />
     </div>
